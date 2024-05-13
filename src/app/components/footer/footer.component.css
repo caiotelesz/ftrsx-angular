@@ -1,0 +1,40 @@
+.page-footer {
+  display: flex;
+  flex-direction: row;
+  background-color: #D9D9D9;
+  padding: 60px 100px;
+  gap: 150px;
+}
+
+.page-footer footer {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-left: 90px;
+}
+
+.page-footer footer div {
+  margin-right: 380px;
+}
+
+.page-footer footer div p {
+  margin: 0;
+  color: #979797;
+  font-weight: bold;
+}
+
+.page-footer footer a {
+  text-decoration: none;
+  color: #979797;
+  transition: color 0.3s ease;
+}
+
+.page-footer footer a:hover {
+  color: #000;
+}
+
+.img-footer {
+  width: 113px;
+  height: 15.5px;
+  margin-top: 18px;
+}
