@@ -29,8 +29,8 @@ import { AluguelComponent } from './components/aluguel/aluguel.component';
 import { AlugadasComponent } from './components/alugadas/alugadas.component';
 import { LinhaImovelComponent } from './components/linha-imovel/linha-imovel.component';
 import { LinhaAluguelComponent } from './components/linha-aluguel/linha-aluguel.component';
-import { NovoImovelComponent } from './novo-imovel/novo-imovel.component';
-
+import { NovoImovelComponent } from './components/novo-imovel/novo-imovel.component';
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask'
 
 @NgModule({
   declarations: [
@@ -65,7 +65,8 @@ import { NovoImovelComponent } from './novo-imovel/novo-imovel.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
   providers: [],
   bootstrap: [AppComponent]

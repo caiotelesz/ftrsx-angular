@@ -8,6 +8,7 @@ import { AlugadasComponent } from './components/alugadas/alugadas.component';
 import { DisponiveisComponent } from './components/disponiveis/disponiveis.component';
 import { AluguelComponent } from './components/aluguel/aluguel.component';
 import { SobreComponent } from './components/sobre/sobre.component';
+import { NovoImovelComponent } from './components/novo-imovel/novo-imovel.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,11 @@ const routes: Routes = [
   {
     path: 'sobre',
     component: SobreComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'cadastroimovel',
+    component: NovoImovelComponent,
     canActivate: [AuthGuard]
   }
 ];

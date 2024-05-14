@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-alugadas',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./alugadas.component.css']
 })
 export class AlugadasComponent {
+  constructor(private authService: AuthService, private router: Router) {}
 
+  entrarCadastro(){
+    if(this.authService.isAuthenticatedUser())
+      {
+      this.router.navigate(['/cadastroimovel']);
+    }
+  }
 }

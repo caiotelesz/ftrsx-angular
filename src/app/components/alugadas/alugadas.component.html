@@ -3,7 +3,7 @@
   <div class="titulo">
     <div></div>
     <div><h1>Casas alugadas</h1></div>
-    <div><button>Novo imóvel</button></div>
+    <div><button (click)="entrarCadastro()">Novo imóvel</button></div>
   </div>
   <div class="tabela-itens">
     <app-linha-imovel [disponivel]="false" nome="Casa de Praia" estado="Ubatuba" endereco="São Paulo" numero="152" cep="150245" tipo="Casa" [valor]="300.5"></app-linha-imovel>
