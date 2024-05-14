@@ -1,39 +1,27 @@
 <section class="page-header">
   <div>
-    <a routerLink="/">
+    <a (click)="entrar()">
       <img class="img-header" src="/assets/imagens/logo-header.png" alt="header logo" />
     </a>
   </div>
 
   <div class="componentes">
-    <a routerLink="/vitrine">
-      <p> Shop All  </p>
+    <a>
+      <p (click)="entrarAlugados()">Alugados</p>
     </a>
 
-    <a routerLink="/">
-      <p>Home</p>
+    <a>
+      <p (click)="entrarDisponiveis()">Disponíveis</p>
     </a>
 
-    <a routerLink="/contato">
-      <p>Contato</p>
-    </a>
-
-    <a href="https://www.instagram.com/featuresx/" target="_blank" rel="noopener noreferrer">
-      <p>Instagram</p>
+    <a>
+      <p (click)="entrarAlugueis()">Alugueis</p>
     </a>
   </div>
 
-  <div class="icons-header">
-    <div>
-      <a routerLink="/login">
-        <img src="/assets/images/profile.png" alt="profile" />
-      </a>
-    </div>
-
-    <div>
-      <a routerLink="/">
-        <img src="/assets/images/search.png" alt="" />
-      </a>
-    </div>
+  <div class="sair-button">
+    <a (click)="sair()">
+      <p>Sair</p>
+    </a>
   </div>
 </section>

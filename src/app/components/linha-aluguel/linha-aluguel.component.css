@@ -1,0 +1,42 @@
+.linha-aluguel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 50px;
+  background-color: #979797;
+  width: 100%;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.linha-aluguel>div{
+  width: 30%;
+  justify-content: center;
+}
+
+p, span{
+  margin: 10;
+  color: #fff;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.linha-aluguel img{
+  width: 50%;
+}
+
+.linha-info{
+  text-align: start;
+}
+
+.linha-img{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.linha-nome{
+  text-align: center;
+}

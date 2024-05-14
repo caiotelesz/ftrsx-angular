@@ -8,8 +8,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
-import { ReadAllComponent } from './components/read-all/read-all.component';
-import { InativosComponent } from './components/inativos/inativos.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -22,8 +20,15 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatSelectModule } from "@angular/material/select";
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { VitrineComponent } from './vitrine/vitrine.component';
+import { HomeComponent } from './components/home/home.component';
+import { SobreComponent } from './components/sobre/sobre.component';
+import { DisponiveisComponent } from './components/disponiveis/disponiveis.component';
+import { AluguelComponent } from './components/aluguel/aluguel.component';
+import { AlugadasComponent } from './components/alugadas/alugadas.component';
+import { LinhaImovelComponent } from './components/linha-imovel/linha-imovel.component';
+import { LinhaAluguelComponent } from './components/linha-aluguel/linha-aluguel.component';
 
 
 @NgModule({
@@ -31,10 +36,15 @@ import { VitrineComponent } from './vitrine/vitrine.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ReadAllComponent,
-    InativosComponent,
     LoginComponent,
     VitrineComponent,
+    HomeComponent,
+    SobreComponent,
+    DisponiveisComponent,
+    AluguelComponent,
+    AlugadasComponent,
+    LinhaImovelComponent,
+    LinhaAluguelComponent
   ],
   imports: [
     ScrollingModule,

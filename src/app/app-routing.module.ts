@@ -1,24 +1,44 @@
+// app.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ReadAllComponent } from './components/read-all/read-all.component';
-import { InativosComponent } from './components/inativos/inativos.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './services/auth-guard.guard';
+import { AlugadasComponent } from './components/alugadas/alugadas.component';
+import { DisponiveisComponent } from './components/disponiveis/disponiveis.component';
+import { AluguelComponent } from './components/aluguel/aluguel.component';
+import { SobreComponent } from './components/sobre/sobre.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ReadAllComponent
-  },
-  {
-    path: 'inativos',
-    component: InativosComponent
-  },
-
-  {
-    path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'alugados',
+    component: AlugadasComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'disponiveis',
+    component: DisponiveisComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'aluguel',
+    component: AluguelComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'sobre',
+    component: SobreComponent,
+    canActivate: [AuthGuard]
   }
-
 ];
 
 @NgModule({

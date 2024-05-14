@@ -1,0 +1,18 @@
+<div class="linha-imovel">
+  <div class="linha-disponivel">
+    <span>Disponível:</span>
+    <img *ngIf="disponivel" src="../../../assets/imagens/sim.png" alt="Disponível">
+    <img *ngIf="!disponivel" src="../../../assets/imagens/nao.png" alt="Não disponível">
+  </div>
+  <div class="linha-nome">
+    <span>{{ nome }}</span>
+  </div>
+  <div class="linha-info">
+    <p>Estado: {{estado}}</p>
+    <p>Endereço: {{endereco}}</p>
+    <p>Número: {{numero}}</p>
+    <p>CEP: {{cep}}</p>
+    <p>Tipo: {{tipo}}</p>
+    <p>Valor: {{valor}}</p>
+  </div>
+</div>

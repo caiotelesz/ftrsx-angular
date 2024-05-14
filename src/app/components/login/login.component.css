@@ -18,6 +18,9 @@ body {
 .page-login div {
   margin: 0 auto;
   max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-login div h1 {
@@ -25,6 +28,7 @@ body {
   font-size: 70px;
   font-style: italic;
   margin: 30px;
+  font-weight: 800;
 }
 
 .page-login div input {
@@ -56,21 +60,3 @@ body {
   background-color: hsla(0, 0%, 67%, 0.3);
 }
 
-.create-login {
-  display: flex;
-  justify-content: center;
-}
-
-.create-login a {
-  text-decoration: none;
-  color: #979797;
-  margin-right: 15px;
-}
-
-.create-login a:last-child {
-  margin-right: 0;
-}
-
-.create-login a:hover {
-  color: #000;
-}

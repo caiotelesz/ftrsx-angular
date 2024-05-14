@@ -1,17 +1,16 @@
 .page-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #D9D9D9;
 }
 
 .page-header div {
-  padding: 15px 35px;
+  padding: 30px 30px 30px 30px;
 }
 
 .img-header {
   width: 113px;
   height: 15.5px;
-  margin-top: 18px;
 }
 
 .componentes {
@@ -33,10 +32,22 @@
   color: #000;
 }
 
-.icons-header {
+.sair-button{
   display: flex;
+  align-items: center;
+  width: 113px;
 }
 
-.icons-header div {
-  padding: 15px 10px;
+.sair-button a{
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #979797;
+  font-weight: bold;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.sair-button a:hover {
+  cursor: pointer;
+  color: #000;
 }
