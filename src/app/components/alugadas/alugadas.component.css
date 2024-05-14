@@ -7,10 +7,17 @@
 }
 .titulo{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   margin: 30px 30px;
+  width: 100%;
+}
+.titulo>div{
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .componentes{
   display: flex;
@@ -28,5 +35,16 @@ h1{
   flex-direction: column;
   gap: 20px;
   width: 80%;
+}
+button{
+  width: 100%;
+  max-width: 200px;
+  background-color: #ABABAB;
+  border: 0px;
+  border-radius: 5px;
+  padding: 5px 15px;
+  color: #fff;
+  margin-top: 20px;
+  transition: color 0.3s ease;
 }
 
