@@ -7,11 +7,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./linha-aluguel.component.css']
 })
 export class LinhaAluguelComponent {
+  @Input() id: number=0;
   @Input() nome: string="";
   @Input() tipo: string="";
-  @Input() valor: number=20;
+  @Input() valor: number=0;
   @Input() nomeCliente: string="";
   @Input() cpf: string="";
   @Input() formaPagamento: string="";
-  @Input() idImovelAlugado: number=1;
+  @Input() idImovel: number=0;
+  @Input() nomeImovel: string="";
 }
