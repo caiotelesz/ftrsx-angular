@@ -1,0 +1,52 @@
+.container-imovel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: right;
+  background-color: gray;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 20px;
+  width: 100%;
+  max-width: 400px;
+  color: #fff;
+}
+
+.container-imovel label {
+  margin-right: 10px;
+  display: inline-block;
+  color: #fff;
+}
+
+.container-imovel input {
+  border: 0px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.container-imovel input:focus {
+  outline: none;
+}
+
+.btn-enviar {
+  text-align: center;
+}
+
+.btn-enviar input {
+  border: 0px;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 5px 15px;
+  background-color: #ABABAB;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.btn-enviar > input:hover {
+  background-color: hsla(0, 0%, 67%, 0.8);
+}
+
+.btn-enviar > input:active {
+  background-color: hsla(0, 0%, 67%, 0.3);
+}

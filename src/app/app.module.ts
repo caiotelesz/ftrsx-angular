@@ -29,6 +29,7 @@ import { AluguelComponent } from './components/aluguel/aluguel.component';
 import { AlugadasComponent } from './components/alugadas/alugadas.component';
 import { LinhaImovelComponent } from './components/linha-imovel/linha-imovel.component';
 import { LinhaAluguelComponent } from './components/linha-aluguel/linha-aluguel.component';
+import { NovoImovelComponent } from './novo-imovel/novo-imovel.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { LinhaAluguelComponent } from './components/linha-aluguel/linha-aluguel.
     AluguelComponent,
     AlugadasComponent,
     LinhaImovelComponent,
-    LinhaAluguelComponent
+    LinhaAluguelComponent,
+    NovoImovelComponent
   ],
   imports: [
     ScrollingModule,
