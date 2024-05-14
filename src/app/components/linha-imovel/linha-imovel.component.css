@@ -40,3 +40,7 @@ p, span{
 .linha-nome{
   text-align: center;
 }
+
+.linha-button{
+  width: 20px;
+}

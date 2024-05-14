@@ -22,7 +22,7 @@ p, span{
 }
 
 .linha-aluguel img{
-  width: 50%;
+  width: 20px;
 }
 
 .linha-info{
@@ -36,7 +36,13 @@ p, span{
   align-items: center;
   text-align: center;
 }
+.linha-img>img{
+  width: 20%;
+}
 
 .linha-nome{
   text-align: center;
+}
+.linha-button{
+  width: 20px;
 }
