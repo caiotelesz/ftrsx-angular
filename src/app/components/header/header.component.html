@@ -1,27 +1,35 @@
-<section class="page-header">
-  <div>
-    <a (click)="entrar()">
-      <img class="img-header" src="/assets/imagens/logo-header.png" alt="header logo" />
-    </a>
+<div class="page">
+  <div class="content">
+    <section class="page-header">
+      <div>
+        <a (click)="entrar()">
+          <img class="img-header" src="../../../assets/imagens/logo-header2.png" alt="header logo" />
+        </a>
+      </div>
+
+      <div class="componentes">
+        <a>
+          <p (click)="entrar()">Imóveis</p>
+        </a>
+
+        <a>
+          <p (click)="entrarAlugados()">Alugados</p>
+        </a>
+
+        <a>
+          <p (click)="entrarDisponiveis()">Disponíveis</p>
+        </a>
+
+        <a>
+          <p (click)="entrarAlugueis()">Alugueis</p>
+        </a>
+      </div>
+
+      <div class="sair-button">
+        <a (click)="sair()">
+          <p>Sair</p>
+        </a>
+      </div>
+    </section>
   </div>
-
-  <div class="componentes">
-    <a>
-      <p (click)="entrarAlugados()">Alugados</p>
-    </a>
-
-    <a>
-      <p (click)="entrarDisponiveis()">Disponíveis</p>
-    </a>
-
-    <a>
-      <p (click)="entrarAlugueis()">Alugueis</p>
-    </a>
-  </div>
-
-  <div class="sair-button">
-    <a (click)="sair()">
-      <p>Sair</p>
-    </a>
-  </div>
-</section>
+</div>

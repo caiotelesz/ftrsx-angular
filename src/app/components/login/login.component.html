@@ -1,13 +1,16 @@
-<section class="page-login">
-  <div>
-    <h1>Login</h1>
-
-    <input type="text" [(ngModel)]="username" placeholder="username" />
-    <br />
-    <input type='password' [(ngModel)]="password" placeholder='senha' />
-    <br/>
-
-    <button (click)="login()">Entrar</button>
+<div class="content">
+  <div class="fundoinicial">
   </div>
-</section>
+  <div class="page-login">
+    <div>
+      <h1>Login</h1>
 
+      <input type="text" [(ngModel)]="username" placeholder="Username" />
+      <br />
+      <input type='password' [(ngModel)]="password" placeholder='Senha' />
+      <br/>
+
+      <button (click)="login()">Entrar</button>
+    </div>
+  </div>
+</div>

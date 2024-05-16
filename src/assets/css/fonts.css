@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Font-padrao";
+  src: url(/src/assets/fonts/PoetsenOne-Regular.ttf);
+}
+@font-face {
+  font-family: "Font-Roboto";
+  src: url(/src/assets/fonts/Roboto-Regular.ttf);
+}
+

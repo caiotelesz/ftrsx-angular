@@ -30,7 +30,11 @@ import { AlugadasComponent } from './components/alugadas/alugadas.component';
 import { LinhaImovelComponent } from './components/linha-imovel/linha-imovel.component';
 import { LinhaAluguelComponent } from './components/linha-aluguel/linha-aluguel.component';
 import { NovoImovelComponent } from './components/novo-imovel/novo-imovel.component';
-import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask'
+import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+import { TermosComponent } from './components/termos/termos.component';
+import { PoliticaComponent } from './components/politica/politica.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { MatButton } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,9 @@ import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask'
     AlugadasComponent,
     LinhaImovelComponent,
     LinhaAluguelComponent,
-    NovoImovelComponent
+    NovoImovelComponent,
+    TermosComponent,
+    PoliticaComponent
   ],
   imports: [
     ScrollingModule,
@@ -66,7 +72,8 @@ import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask'
     MatNativeDateModule,
     MatSelectModule,
     NgxMaskDirective,
-    NgxMaskPipe
+    NgxMaskPipe,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

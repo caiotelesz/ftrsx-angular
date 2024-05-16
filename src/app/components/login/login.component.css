@@ -1,11 +1,24 @@
 body {
-  background-color: #282c34;
   padding: 0;
   margin: 0;
 }
+.content{
+  display: flex;
+  flex-direction: row;
 
+}
+.content>div{
+  width: 50%;
+}
+.fundoinicial{
+  width: 100vw;
+  background-image: url(../../../assets/imagens/inicial.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30%;
+}
 .page-login {
-  background-color: #282c34;
+  background-color: #131313;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -24,9 +37,9 @@ body {
 }
 
 .page-login > div h1 {
-  color: #fff;
+  color: #3488ff;
   font-size: 70px;
-  font-style: italic;
+  font-family: 'Font-padrao';
   margin: 30px;
   font-weight: 800;
 }
@@ -47,20 +60,22 @@ body {
 .page-login > div button {
   width: 100%;
   max-width: 100px;
-  background-color: #ABABAB;
+  background-color: #3488ff;
   border: 0px;
   border-radius: 15px;
   padding: 10px 15px;
   font-size: 15px;
   color: #fff;
   transition: color 0.3s ease;
+  font-weight: 100;
+  font-family: 'Font-padrao';
 }
 
 .page-login > div button:hover {
-  background-color: hsla(0, 0%, 67%, 0.8);
+  background-color: hsla(0, 0%, 91%, 0.8);
+  cursor: pointer;
+  color: #000000;
+  transition: 0.5s;
 }
 
-.page-login > div button:active {
-  background-color: hsla(0, 0%, 67%, 0.3);
-}
 

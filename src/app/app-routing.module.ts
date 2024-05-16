@@ -9,6 +9,8 @@ import { DisponiveisComponent } from './components/disponiveis/disponiveis.compo
 import { AluguelComponent } from './components/aluguel/aluguel.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { NovoImovelComponent } from './components/novo-imovel/novo-imovel.component';
+import { PoliticaComponent } from './components/politica/politica.component';
+import { TermosComponent } from './components/termos/termos.component';
 
 const routes: Routes = [
   {
@@ -43,6 +45,16 @@ const routes: Routes = [
   {
     path: 'cadastroimovel',
     component: NovoImovelComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'politica',
+    component: PoliticaComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'termosecondicoes',
+    component: TermosComponent,
     canActivate: [AuthGuard]
   }
 ];

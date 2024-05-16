@@ -15,4 +15,14 @@ export class FooterComponent {
       this.router.navigate(['/sobre']);
     }
   }
+  entrarPolitica() {
+    if (this.authService.isAuthenticatedUser()) {
+      this.router.navigate(['/politica']);
+    }
+  }
+  entrarTermos() {
+    if (this.authService.isAuthenticatedUser()) {
+      this.router.navigate(['/termosecondicoes']);
+    }
+  }
 }
