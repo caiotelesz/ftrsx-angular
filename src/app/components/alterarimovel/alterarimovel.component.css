@@ -2,8 +2,6 @@
   display: flex;
   justify-content: center;
   margin: 20px;
-  font-weight: bold;
-  font-family: 'Font-padrao';
 }
 
 .container-imovel {
@@ -42,19 +40,20 @@
   text-align: center;
 }
 
-button{
-  width: 100%;
-  max-width: 200px;
-  background-color: #6f6f6f;
+.btn-enviar input {
   border: 0px;
   border-radius: 5px;
+  font-size: 17px;
   padding: 5px 15px;
+  background-color: #ABABAB;
   color: #fff;
-  font-weight: 100;
-  font-family: 'Font-padrao';
+  transition: color 0.3s ease;
 }
-button:hover{
-  cursor: pointer;
-  background-color: #525252;
-  transition: 0.5s;
+
+.btn-enviar > input:hover {
+  background-color: hsla(0, 0%, 67%, 0.8);
+}
+
+.btn-enviar > input:active {
+  background-color: hsla(0, 0%, 67%, 0.3);
 }

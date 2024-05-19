@@ -37,7 +37,7 @@
   gap: 30px;
 }
 
-.componentes a {
+.componentes p {
   text-decoration: none;
   text-transform: capitalize;
   color: #fff;
@@ -45,11 +45,7 @@
   font-style: italic;
   transition: color 0.3s ease;
 }
-.componentes a:hover{
-  cursor: pointer;
-}
-
-.componentes a:hover {
+.componentes p:hover {
   color: #73aaf8;
   cursor: pointer;
 }

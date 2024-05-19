@@ -34,6 +34,7 @@ import { TermosComponent } from './components/termos/termos.component';
 import { PoliticaComponent } from './components/politica/politica.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { AlterarimovelComponent } from './components/alterarimovel/alterarimovel.component';
 
 registerLocaleData(localePt);
 
@@ -53,7 +54,8 @@ registerLocaleData(localePt);
     LinhaAluguelComponent,
     NovoImovelComponent,
     TermosComponent,
-    PoliticaComponent
+    PoliticaComponent,
+    AlterarimovelComponent
   ],
   imports: [
     ScrollingModule,

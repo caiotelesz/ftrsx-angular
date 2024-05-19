@@ -2,20 +2,21 @@
   display: flex;
   flex-direction: row;
   background-color: #131313;
-  padding: 60px 100px;
-  gap: 150px;
+  align-items: center;
   bottom: 0;
+  width: 100%;
+  height: 200px;
+  gap: 20%;
 }
 
 .page-footer footer {
   display: flex;
   flex-direction: row;
-  gap: 50px;
-  margin-left: 90px;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .page-footer footer div {
-  margin-right: 380px;
 }
 
 .page-footer footer div p {
@@ -30,12 +31,19 @@
   transition: color 0.3s ease;
 }
 
-.page-footer footer a:hover {
-  color: #666666;
-}
-
 .img-footer {
   width: 113px;
   height: 15.5px;
-  margin-top: 18px;
+  padding-left: 20px;
+}
+
+.content-sobre{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content-sobre-link:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }
