@@ -3,16 +3,16 @@
   <section class="container-imovel">
     <div>
       <label for="cep">CEP</label>
-      <input type="text" id="cep" name="cep" (change)="buscarEnderecoPorCEP()"><br><br>
+      <input type="text" id="cep" name="cep" (change)="buscarEnderecoPorCEP()" mask="00000-000"><br><br>
 
       <label for="estado">Estado</label>
-      <input type="text" id="estado" name="estado" readonly><br><br>
+      <input type="text" id="estado" name="estado"><br><br>
 
       <label for="endereco">Endereço</label>
-      <input type="text" id="endereco" name="endereco" readonly><br><br>
+      <input type="text" id="endereco" name="endereco"><br><br>
 
       <label for="numero">Número</label>
-      <input type="text" id="numero" name="numero" readonly><br><br>
+      <input type="text" id="numero" name="numero"><br><br>
 
       <label for="tipo">Tipo</label>
       <input list="tipo" [(ngModel)]="selectedTipo" (input)="handleInput($event)">
@@ -21,11 +21,11 @@
       </datalist><br><br>
 
       <label for="valor">Valor</label>
-      <input type="number" id="valor" name="valor"><br><br>
+      <input id="valor" name="valor" [mask]="mask" thousandSeparator="." decimalMarker=","><br><br>
     </div>
 
     <div class="btn-enviar">
-      <input type="submit" value="Adicionar">
+      <button>Adicionar</button>
     </div>
   </section>
 </div>

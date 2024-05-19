@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-linha-imovel',
@@ -6,6 +8,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./linha-imovel.component.css']
 })
 export class LinhaImovelComponent {
+  constructor(private authService: AuthService, private router: Router) {}
+
   @Input() disponivel: boolean = true;
   @Input() id: number = 1;
   @Input() nome: string='Apartamento Itaim';
@@ -15,4 +19,17 @@ export class LinhaImovelComponent {
   @Input() cep: string='teste';
   @Input() tipo: string='Apartamento';
   @Input() valor: number=200.00;
+
+  alterarImovel(){
+    if(this.authService.isAuthenticatedUser())
+      {
+      this.router.navigate(['/imovel/', this.id]);
+    }
+  }
+  alugar(){
+    if(this.authService.isAuthenticatedUser())
+      {
+      this.router.navigate(['/alugar/', this.id]);
+    }
+  }
 }

@@ -28,10 +28,10 @@
   <div class="linha-button">
     <div class="linha-icone-button">
       <img class="IconButton" src="../../../assets/imagens/deletar.png" alt="Deletar">
-      <img class="IconButton" src="../../../assets/imagens/atualizar.png" alt="Alterar">
+      <img (click)="alterarImovel()" class="IconButton" src="../../../assets/imagens/atualizar.png" alt="Alterar">
     </div>
     <div>
-      <button *ngIf="disponivel">Alugar</button>
+      <button *ngIf="disponivel" (click)="alugar()">Alugar</button>
     </div>
     <div class="content-valor">
       <p class="linha-valor">R$ {{ valor | number:'1.2-2' }}</p>

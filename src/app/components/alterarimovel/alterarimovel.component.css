@@ -1,7 +1,11 @@
 .content{
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 20px;
+  font-weight: bold;
+  font-family: 'Font-padrao';
+  min-height: 70vh;
 }
 
 .container-imovel {
@@ -40,20 +44,19 @@
   text-align: center;
 }
 
-.btn-enviar input {
+button{
+  width: 100%;
+  max-width: 200px;
+  background-color: #6f6f6f;
   border: 0px;
   border-radius: 5px;
-  font-size: 17px;
   padding: 5px 15px;
-  background-color: #ABABAB;
   color: #fff;
-  transition: color 0.3s ease;
+  font-weight: 100;
+  font-family: 'Font-padrao';
 }
-
-.btn-enviar > input:hover {
-  background-color: hsla(0, 0%, 67%, 0.8);
-}
-
-.btn-enviar > input:active {
-  background-color: hsla(0, 0%, 67%, 0.3);
+button:hover{
+  cursor: pointer;
+  background-color: #3488FF;
+  transition: 0.3s;
 }

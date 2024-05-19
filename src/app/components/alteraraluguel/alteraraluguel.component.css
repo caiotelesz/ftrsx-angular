@@ -61,3 +61,29 @@ button:hover{
   background-color: #3488FF;
   transition: 0.3s;
 }
+.linha-info{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.content-valor{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: #3488FF;
+  padding: 0px 10px 0px 10px;
+  width: 80px;
+}
+.content-valor>p{
+  margin: 0px;
+}
+.info-valor{
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}

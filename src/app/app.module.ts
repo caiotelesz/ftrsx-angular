@@ -35,9 +35,14 @@ import { PoliticaComponent } from './components/politica/politica.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { AlterarimovelComponent } from './components/alterarimovel/alterarimovel.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { NovoAluguelComponent } from './components/novo-aluguel/novo-aluguel.component';
+import { AlteraraluguelComponent } from './components/alteraraluguel/alteraraluguel.component'
 
 registerLocaleData(localePt);
-
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +60,9 @@ registerLocaleData(localePt);
     NovoImovelComponent,
     TermosComponent,
     PoliticaComponent,
-    AlterarimovelComponent
+    AlterarimovelComponent,
+    NovoAluguelComponent,
+    AlteraraluguelComponent,
   ],
   imports: [
     ScrollingModule,
@@ -73,7 +80,8 @@ registerLocaleData(localePt);
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    NgxMaskModule.forRoot(maskConfig)
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]

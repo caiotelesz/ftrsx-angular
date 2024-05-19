@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 export class AlterarimovelComponent {
   tipos: string[] = ['Casa', 'Apartamento', 'Sobrado'];
   selectedTipo = "";
+  mask: string = 'separator.2';
   constructor(private http: HttpClient) { }
 
   handleInput(event: any) {
@@ -19,12 +20,13 @@ export class AlterarimovelComponent {
   }
   buscarEnderecoPorCEP() {
     const cep = (document.getElementById('cep') as HTMLInputElement).value;
-    if (cep.length !== 8) {
-      // CEP inválido
+    const cepSemHifen = cep.replace('-', '');
+    console.log('Buscando endereço para o CEP:', cepSemHifen);
+    if (cepSemHifen.length !== 8) {
       return;
     }
 
-    this.http.get<any>(`https://viacep.com.br/ws/${cep}/json/`).subscribe(
+    this.http.get<any>(`https://viacep.com.br/ws/${cepSemHifen}/json/`).subscribe(
       data => {
         if (!data.erro) {
           // Preencher os campos com os dados do endereço
