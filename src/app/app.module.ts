@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
@@ -30,11 +30,12 @@ import { AlugadasComponent } from './components/alugadas/alugadas.component';
 import { LinhaImovelComponent } from './components/linha-imovel/linha-imovel.component';
 import { LinhaAluguelComponent } from './components/linha-aluguel/linha-aluguel.component';
 import { NovoImovelComponent } from './components/novo-imovel/novo-imovel.component';
-import { NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 import { TermosComponent } from './components/termos/termos.component';
 import { PoliticaComponent } from './components/politica/politica.component';
-import {MatMenuModule} from '@angular/material/menu';
-import { MatButton } from '@angular/material/button';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -70,12 +71,9 @@ import { MatButton } from '@angular/material/button';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule,
-    NgxMaskDirective,
-    NgxMaskPipe,
-    MatMenuModule
+    MatSelectModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

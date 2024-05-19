@@ -7,11 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class LinhaImovelComponent {
   @Input() disponivel: boolean = true;
-  @Input() nome: string='teste';
+  @Input() id: number = 1;
+  @Input() nome: string='Apartamento Itaim';
   @Input() estado: string='teste';
   @Input() endereco: string='teste';
   @Input() numero: string='12';
   @Input() cep: string='teste';
-  @Input() tipo: string='teste';
-  @Input() valor: number=200;
+  @Input() tipo: string='Apartamento';
+  @Input() valor: number=200.00;
 }

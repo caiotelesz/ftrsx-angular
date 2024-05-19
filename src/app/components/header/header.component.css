@@ -1,7 +1,7 @@
 .page{
   display: flex;
   justify-content: center;
-  background-color: #e1e1e1;
+  background-color: #fff;
 }
 .content{
   margin-top: 15px;
@@ -71,7 +71,7 @@
 
 .sair-button a:hover {
   cursor: pointer;
-  color: #73aaf8;
+  color: #ff5555;
 }
 
 .dropdown {

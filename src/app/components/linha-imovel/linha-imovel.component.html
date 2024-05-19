@@ -1,25 +1,40 @@
 <div class="linha-imovel">
   <div class="linha-disponivel">
-    <span>Disponível:</span>
-    <img *ngIf="disponivel" src="../../../assets/imagens/sim.png" alt="Disponível">
-    <img *ngIf="!disponivel" src="../../../assets/imagens/nao.png" alt="Não disponível">
+    <img class="IconDis" *ngIf="disponivel" src="../../../assets/imagens/sim.png" alt="Disponível">
+    <img class="IconDis" *ngIf="!disponivel" src="../../../assets/imagens/nao.png" alt="Não disponível">
   </div>
   <div class="linha-nome">
-    <span>{{ nome }}</span>
+    <div>
+      <img class="IconTipo" *ngIf="tipo === 'Casa'" src="../../../assets/imagens/casa.png" alt="Casa">
+      <img class="IconTipo" *ngIf="tipo === 'Apartamento' || tipo === 'Studio' || tipo === 'Kitnet'"
+        src="../../../assets/imagens/apartamentos.png" alt="Apartamento">
+    </div>
+    <div class="nome-content">
+      <div>
+        <p>{{tipo}}</p>
+      </div>
+      <div>
+        <p>Itaim</p>
+      </div>
+    </div>
   </div>
   <div class="linha-info">
+    <p>Id: {{id}}</p>
     <p>Estado: {{estado}}</p>
     <p>Endereço: {{endereco}}</p>
     <p>Número: {{numero}}</p>
     <p>CEP: {{cep}}</p>
-    <p>Tipo: {{tipo}}</p>
-    <p>Valor: {{valor}}</p>
   </div>
   <div class="linha-button">
-    <div>
-      <img src="../../../assets/imagens/excluir.png" alt="Deletar">
-      <img src="../../../assets/imagens/alterar.png" alt="Alterar">
+    <div class="linha-icone-button">
+      <img class="IconButton" src="../../../assets/imagens/deletar.png" alt="Deletar">
+      <img class="IconButton" src="../../../assets/imagens/atualizar.png" alt="Alterar">
     </div>
-    <button *ngIf="disponivel">Alugar</button>
+    <div>
+      <button *ngIf="disponivel">Alugar</button>
+    </div>
+    <div class="content-valor">
+      <p class="linha-valor">R$ {{ valor | number:'1.2-2' }}</p>
+    </div>
   </div>
 </div>
