@@ -1,15 +1,15 @@
 import { Observable } from 'rxjs/internal/Observable';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Aluno } from '../entities/aluno';
-import { environment } from '../environments/environments';
+import { Aluno } from '../entities/imovel';
+import { environmentLogin } from '../environments/environments';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AlunoService {
-  baseUrl = environment.baseUrl;
+  baseUrl = environmentLogin.baseUrl;
   constructor(private http: HttpClient, private snack: MatSnackBar) {}
   message(msg: String): void {
     this.snack.open(`${msg}`, `OK`, {
