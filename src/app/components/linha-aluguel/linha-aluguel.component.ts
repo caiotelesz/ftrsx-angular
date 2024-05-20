@@ -1,7 +1,9 @@
-// aluguel.component.ts
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { Aluguel } from 'src/app/entities/aluguel';
+import { AluguelService } from 'src/app/services/aluguel.service';
+import { Imovel } from 'src/app/entities/imovel';
 
 @Component({
   selector: 'app-linha-aluguel',
@@ -9,22 +11,27 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./linha-aluguel.component.css']
 })
 export class LinhaAluguelComponent {
-  constructor(private authService: AuthService, private router: Router) {}
-
-  @Input() id: number=0;
-  @Input() nome: string="";
-  @Input() tipo: string="";
-  @Input() valor: number=0;
-  @Input() nomeCliente: string="";
-  @Input() cpf: string="";
-  @Input() formaPagamento: string="";
-  @Input() idImovel: number=0;
-  @Input() nomeImovel: string="";
+  constructor(private authService: AuthService, private router: Router, private aluguelService: AluguelService) {}
+  @Input() aluguel!: Aluguel;
+  @Input() imovel!: Imovel;
+  @Output() aluguelDeletado = new EventEmitter<void>();
 
   alterarAluguel(){
     if(this.authService.isAuthenticatedUser())
       {
-      this.router.navigate(['/aluguel/', this.id]);
+      this.router.navigate(['/aluguel/', Number(this.aluguel.id)]);
     }
+  }
+  alugarImovel(){
+    if(this.authService.isAuthenticatedUser())
+      {
+      this.router.navigate(['/alugar/', Number(this.aluguel.imovel.id)]);
+    }
+  }
+  deletarAluguel(): void {
+    this.aluguelService.deletarAluguel(Number(this.aluguel.id)).subscribe(() => {
+      console.log('Aluguel deletado com sucesso');
+      this.aluguelDeletado.emit();
+    });
   }
 }

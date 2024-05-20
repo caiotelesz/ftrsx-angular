@@ -3,14 +3,13 @@
     <img src="../../../assets/imagens/perfil.png" alt="Aluguel">
   </div>
   <div class="linha-nome">
-    <span>{{ nomeImovel }}</span>
-    <p>Id Imovel: {{idImovel}}</p>
+    <p>Id Imovel: {{aluguel.imovel.id}}</p>
   </div>
   <div class="linha-info">
-    <p>Id: {{id}}</p>
-    <p>Inquilino: {{nomeCliente}}</p>
-    <p>CPF: {{cpf}}</p>
-    <p class="linha-valor">Valor: R$ {{ valor | number:'1.2-2' }}</p>
+    <p>Id: {{ aluguel.id }}</p>
+    <p>Estado: {{ aluguel.nomeCliente }}</p>
+    <p>Endereço: {{ aluguel.cpf }}</p>
+    <p>Número: {{ aluguel.formaDePagamento }}</p>
   </div>
   <div class="linha-button">
     <div class="linha-button-icon">

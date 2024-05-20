@@ -6,8 +6,7 @@
     <div></div>
   </div>
   <div class="tabela-itens">
-    <app-linha-aluguel [nomeCliente]="'João'" [nome]="'Nome do Imóvel'" [tipo]="'Casa'" [valor]="1500.00" [cpf]="'123.456.789-00'" [formaPagamento]="'Cartão de Crédito'" [nomeImovel]="'Casa da Praia'">
-</app-linha-aluguel>
+    <app-linha-aluguel *ngFor="let aluguel of alugueis" [aluguel]="aluguel" (aluguelDeletado)="carregarAlugueis()"></app-linha-aluguel>
   </div>
 </div>
 <app-footer></app-footer>
