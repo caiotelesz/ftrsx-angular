@@ -11,8 +11,8 @@ export class AuthService {
 
   constructor() { }
 
-  login(username: string, password: string): boolean {
-    if(username == this.username && password == this.password){
+  login(validado: boolean): boolean {
+    if(validado === true){
       this.isAuthenticated = true;
       return true;
     }

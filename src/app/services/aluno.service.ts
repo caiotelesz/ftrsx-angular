@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs/internal/Observable';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Aluno } from '../entities/imovel';
+import { Aluno } from '../entities/aluno';
 import { environmentLogin } from '../environments/environments';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
