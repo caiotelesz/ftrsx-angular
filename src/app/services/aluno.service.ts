@@ -28,7 +28,6 @@ export class AlunoService {
     return this.http.get<Aluno[]>(this.baseUrl);
   }
 
-  /*método que irá apagar um registro*/
   apagar(id: any): Observable<void> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<void>(url);

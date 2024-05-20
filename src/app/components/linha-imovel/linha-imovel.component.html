@@ -5,36 +5,36 @@
   </div>
   <div class="linha-nome">
     <div>
-      <img class="IconTipo" *ngIf="tipo === 'Casa'" src="../../../assets/imagens/casa.png" alt="Casa">
-      <img class="IconTipo" *ngIf="tipo === 'Apartamento' || tipo === 'Studio' || tipo === 'Kitnet'"
+      <img class="IconTipo" *ngIf="imovel.tipo === 'Casa'" src="../../../assets/imagens/casa.png" alt="Casa">
+      <img class="IconTipo" *ngIf="imovel.tipo === 'Apartamento' || imovel.tipo === 'Studio' || imovel.tipo === 'Kitnet'"
         src="../../../assets/imagens/apartamentos.png" alt="Apartamento">
     </div>
     <div class="nome-content">
       <div>
-        <p>{{tipo}}</p>
+        <p>{{ imovel.tipo }}</p>
       </div>
       <div>
-        <p>Itaim</p>
+        <p>{{ imovel.nome }}</p>
       </div>
     </div>
   </div>
   <div class="linha-info">
-    <p>Id: {{id}}</p>
-    <p>Estado: {{estado}}</p>
-    <p>Endereço: {{endereco}}</p>
-    <p>Número: {{numero}}</p>
-    <p>CEP: {{cep}}</p>
+    <p>Id: {{ imovel.id }}</p>
+    <p>Estado: {{ imovel.estado }}</p>
+    <p>Endereço: {{ imovel.endereco }}</p>
+    <p>Número: {{ imovel.numero }}</p>
+    <p>CEP: {{ imovel.cep }}</p>
   </div>
   <div class="linha-button">
     <div class="linha-icone-button">
-      <img class="IconButton" src="../../../assets/imagens/deletar.png" alt="Deletar">
+      <img (click)="deletarImovel()" class="IconButton" src="../../../assets/imagens/deletar.png" alt="Deletar">
       <img (click)="alterarImovel()" class="IconButton" src="../../../assets/imagens/atualizar.png" alt="Alterar">
     </div>
     <div>
       <button *ngIf="disponivel" (click)="alugar()">Alugar</button>
     </div>
     <div class="content-valor">
-      <p class="linha-valor">R$ {{ valor | number:'1.2-2' }}</p>
+      <p class="linha-valor">R$ {{ imovel.valor | number:'1.2-2' }}</p>
     </div>
   </div>
 </div>

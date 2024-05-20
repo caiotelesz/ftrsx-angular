@@ -5,8 +5,12 @@
     <div><h1>Disponíveis</h1></div>
     <div><button (click)="entrarCadastro()">Novo imóvel</button></div>
   </div>
-  <div class="tabela-itens">
-    <app-linha-imovel></app-linha-imovel>
-  </div>
+    <div class="tabela-itens" *ngIf="imoveisDisponiveis.length > 0; else noImoveis">
+      <app-linha-imovel *ngFor="let imovel of imoveisDisponiveis" [imovel]="imovel" (imovelDeletado)="buscarImoveisDisponiveis()"></app-linha-imovel>
+    </div>
+    <ng-template #noImoveis>
+      <p>Nenhum imóvel disponível no momento.</p>
+    </ng-template>
 </div>
 <app-footer></app-footer>
+

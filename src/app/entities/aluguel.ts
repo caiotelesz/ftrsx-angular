@@ -1,4 +1,4 @@
-import { Imovel } from './imovel'; // Assumindo que a interface Imovel está em um arquivo separado
+import { Imovel } from './imovel';
 
 export interface Aluguel {
   id?: number;

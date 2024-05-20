@@ -6,7 +6,7 @@
       <input type="text" id="cep" name="cep" (change)="buscarEnderecoPorCEP()" mask="00000-000"><br><br>
 
       <label for="estado">Estado</label>
-      <input type="text" id="estado" name="estado" readonly><br><br>
+      <input type="text" id="estado" name="estado"><br><br>
 
       <label for="endereco">Endereço</label>
       <input type="text" id="endereco" name="endereco"><br><br>
@@ -15,17 +15,21 @@
       <input type="text" id="numero" name="numero"><br><br>
 
       <label for="tipo">Tipo</label>
-      <input list="tipo" [(ngModel)]="selectedTipo" (input)="handleInput($event)" readonly>
+      <input list="tipo" [(ngModel)]="selectedTipo" (input)="handleInput($event)">
       <datalist id="tipo" name="tipo">
         <option *ngFor="let tipo of tipos" [value]="tipo"></option>
       </datalist><br><br>
 
       <label for="valor">Valor</label>
       <input id="valor" name="valor" [mask]="mask" thousandSeparator="." decimalMarker=","><br><br>
-      </div>
+    </div>
+
     <div class="btn-enviar">
-      <button>Atualizar</button>
+      <button (click)="atualizarImovel()">Atualizar</button>
     </div>
   </section>
 </div>
+<app-footer></app-footer>
+
+
 <app-footer></app-footer>
