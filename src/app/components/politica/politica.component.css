@@ -1,0 +1,9 @@
+.linha-privacidade {
+  background-color: #131313;
+  color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 10px 200px;
+  font-weight: bold;
+  font-style: italic;
+}
