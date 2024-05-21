@@ -5,6 +5,8 @@ import { Aluguel } from 'src/app/entities/aluguel';
 import { AluguelService } from 'src/app/services/aluguel.service';
 import { Imovel } from 'src/app/entities/imovel';
 import { ImovelService } from 'src/app/services/imovel.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-linha-aluguel',
@@ -12,7 +14,7 @@ import { ImovelService } from 'src/app/services/imovel.service';
   styleUrls: ['./linha-aluguel.component.css']
 })
 export class LinhaAluguelComponent {
-  constructor(private authService: AuthService, private router: Router, private aluguelService: AluguelService, private imovelService: ImovelService) {}
+  constructor(private authService: AuthService, private router: Router, private aluguelService: AluguelService, private imovelService: ImovelService, private dialog: MatDialog) {}
   @Input() aluguel!: Aluguel;
   @Input() imovel!: Imovel;
   @Output() aluguelDeletado = new EventEmitter<void>();
@@ -30,10 +32,21 @@ export class LinhaAluguelComponent {
     }
   }
   deletarAluguel(): void {
-    this.aluguelService.deletarAluguel(Number(this.aluguel.id)).subscribe(() => {
-      console.log('Aluguel deletado com sucesso');
-      this
-      this.aluguelDeletado.emit();
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        message: 'Tem certeza que deseja deletar este aluguel?'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.aluguelService.deletarAluguel(Number(this.aluguel.id)).subscribe(() => {
+          console.log('Imóvel deletado com sucesso');
+          this.aluguelDeletado.emit();
+        }, error => {
+          console.error('Erro ao deletar o imóvel:', error);
+        });
+      }
     });
   }
 }

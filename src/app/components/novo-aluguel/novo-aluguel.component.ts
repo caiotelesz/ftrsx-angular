@@ -72,15 +72,6 @@ export class NovoAluguelComponent implements OnInit {
       imovel: this.imovel
     };
 
-    this.imovelService.alugar(Number(this.imovel.id), this.imovel).subscribe(
-      () => {
-        console.log('Imóvel alugado com sucesso!');
-      },
-      error => {
-        console.error('Erro ao atualizar imóvel:', error);
-      }
-    );
-
     this.aluguelService.gravarAluguel(novoAluguel).subscribe(
       () => {
         console.log('Aluguel cadastrado com sucesso');

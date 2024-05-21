@@ -32,12 +32,14 @@ import { LinhaAluguelComponent } from './components/linha-aluguel/linha-aluguel.
 import { NovoImovelComponent } from './components/novo-imovel/novo-imovel.component';
 import { TermosComponent } from './components/termos/termos.component';
 import { PoliticaComponent } from './components/politica/politica.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { AlterarimovelComponent } from './components/alterarimovel/alterarimovel.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { NovoAluguelComponent } from './components/novo-aluguel/novo-aluguel.component';
-import { AlteraraluguelComponent } from './components/alteraraluguel/alteraraluguel.component'
+import { AlteraraluguelComponent } from './components/alteraraluguel/alteraraluguel.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component'
 
 registerLocaleData(localePt);
 const maskConfig: Partial<IConfig> = {
@@ -63,6 +65,7 @@ const maskConfig: Partial<IConfig> = {
     AlterarimovelComponent,
     NovoAluguelComponent,
     AlteraraluguelComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     ScrollingModule,
@@ -81,7 +84,9 @@ const maskConfig: Partial<IConfig> = {
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    NgxMaskModule.forRoot(maskConfig)
+    NgxMaskModule.forRoot(maskConfig),
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]

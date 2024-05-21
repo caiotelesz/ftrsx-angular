@@ -12,7 +12,6 @@ import { ActivatedRoute } from '@angular/router';
 export class AlterarimovelComponent {
   tipos: string[] = ['Casa', 'Apartamento', 'Kitnet'];
   selectedTipo = "";
-  mask: string = 'separator.2';
   bairro: string = '';
   imovel!: Imovel;
   id!: Number;
@@ -44,7 +43,7 @@ export class AlterarimovelComponent {
     (document.getElementById('cep') as HTMLInputElement).value = this.imovel.cep;
     (document.getElementById('estado') as HTMLInputElement).value = this.imovel.estado;
     (document.getElementById('endereco') as HTMLInputElement).value = this.imovel.endereco;
-    (document.getElementById('numero') as HTMLInputElement).value = this.imovel.numero;
+    (document.getElementById('numero') as HTMLInputElement).value = String(this.imovel.numero);
     this.selectedTipo = this.imovel.tipo;
     (document.getElementById('valor') as HTMLInputElement).value = String(this.imovel.valor);
   }

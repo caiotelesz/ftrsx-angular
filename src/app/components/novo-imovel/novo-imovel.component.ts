@@ -49,37 +49,60 @@ export class NovoImovelComponent {
     );
   }
 
-  adicionarImovel(): void {
+
+  adicionarImovel() {
     const cep = (document.getElementById('cep') as HTMLInputElement).value;
     const estado = (document.getElementById('estado') as HTMLInputElement).value;
     const endereco = (document.getElementById('endereco') as HTMLInputElement).value;
     const numero = (document.getElementById('numero') as HTMLInputElement).value;
     const tipo = this.selectedTipo;
-    const valor = (document.getElementById('valor') as HTMLInputElement).value;
+    const valor = Number((document.getElementById('valor') as HTMLInputElement).value);
+
+    if (valor < 0 || valor > 100000) {
+      this.snackBar.open('O valor do imóvel deve estar entre 0 e 100.000.', 'Fechar', {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top'
+      });
+      return;
+    }
+
+    if (!['Apartamento', 'Casa', 'Kitnet'].includes(tipo)) {
+      this.snackBar.open('Tipo de imóvel inválido. Os tipos válidos são: Apartamento, Casa, Kitnet.', 'Fechar', {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top'
+      });
+      return;
+    }
 
     const novoImovel = {
       nome: this.bairro,
-      cep: cep,
       estado: estado,
       endereco: endereco,
       numero: numero,
+      cep: cep,
       tipo: tipo,
-      valor: Number(valor),
+      valor: valor,
       alugada: false
     };
 
     this.imovelService.gravarImovel(novoImovel).subscribe(
       () => {
-        console.log('Novo imóvel adicionado com sucesso!');
         this.snackBar.open('Imóvel cadastrado com sucesso', 'Fechar', {
           duration: 3000,
-          horizontalPosition: this.horizontalPosition,
-          verticalPosition: this.verticalPosition
+          horizontalPosition: 'center',
+          verticalPosition: 'top'
         });
         this.limparCampos();
       },
       error => {
         console.error('Erro ao adicionar novo imóvel:', error);
+        this.snackBar.open('Erro ao adicionar novo imóvel', 'Fechar', {
+          duration: 3000,
+          horizontalPosition: 'center',
+          verticalPosition: 'top'
+        });
       }
     );
   }

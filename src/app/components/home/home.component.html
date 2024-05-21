@@ -12,7 +12,7 @@
     <div class="campos-filtros">
       <div>
         <label for="id">ID:</label>
-        <input type="number" id="id" [(ngModel)]="filtroId" placeholder="Id Imóvel">
+        <input type="number" id="id" [(ngModel)]="filtroId" placeholder="Id Imóvel" min="0">
       </div>
       <div>
         <label for="tipo">Tipo:</label>
@@ -20,7 +20,6 @@
           <option value="">Todos</option>
           <option value="Casa">Casa</option>
           <option value="Apartamento">Apartamento</option>
-          <option value="Studio">Studio</option>
           <option value="Kitnet">Kitnet</option>
         </select>
 

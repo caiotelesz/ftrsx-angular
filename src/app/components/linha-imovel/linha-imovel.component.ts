@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/services/auth.service';
 import { Imovel } from 'src/app/entities/imovel';
 import { ImovelService } from 'src/app/services/imovel.service';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-linha-imovel',
@@ -10,30 +12,50 @@ import { ImovelService } from 'src/app/services/imovel.service';
   styleUrls: ['./linha-imovel.component.css']
 })
 export class LinhaImovelComponent {
-  constructor(private authService: AuthService, private router: Router, private imovelService: ImovelService) {}
   @Input() imovel!: Imovel;
   @Output() imovelDeletado = new EventEmitter<void>();
+
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private imovelService: ImovelService,
+    private dialog: MatDialog
+  ) {}
 
   get disponivel(): boolean {
     return !this.imovel.alugada;
   }
 
-  alterarImovel(){
-    if(this.authService.isAuthenticatedUser())
-      {
+  alterarImovel() {
+    if (this.authService.isAuthenticatedUser()) {
       this.router.navigate(['/imovel/', this.imovel.id]);
     }
   }
-  alugar(){
-    if(this.authService.isAuthenticatedUser())
-      {
+
+  alugar() {
+    if (this.authService.isAuthenticatedUser()) {
       this.router.navigate(['/alugar/', this.imovel.id]);
     }
   }
+
   deletarImovel(): void {
-    this.imovelService.deletarImovel(Number(this.imovel.id)).subscribe(() => {
-      console.log('Imóvel deletado com sucesso');
-      this.imovelDeletado.emit();
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        message: this.imovel.alugada
+          ? 'Este imóvel está alugado. Deseja continuar e deletar também o aluguel associado?'
+          : 'Tem certeza que deseja deletar este imóvel?'
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.imovelService.deletarImovel(Number(this.imovel.id)).subscribe(() => {
+          console.log('Imóvel deletado com sucesso');
+          this.imovelDeletado.emit();
+        }, error => {
+          console.error('Erro ao deletar o imóvel:', error);
+        });
+      }
     });
   }
 }
