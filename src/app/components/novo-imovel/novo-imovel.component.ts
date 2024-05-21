@@ -62,7 +62,7 @@ export class NovoImovelComponent {
       cep: cep,
       estado: estado,
       endereco: endereco,
-      numero: Number(numero),
+      numero: numero,
       tipo: tipo,
       valor: Number(valor),
       alugada: false

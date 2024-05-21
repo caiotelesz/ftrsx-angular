@@ -47,7 +47,7 @@ export class AlteraraluguelComponent {
       this.nome = imovelBuscado.nome;
       this.estado = imovelBuscado.estado;
       this.endereco = imovelBuscado.endereco;
-      this.numero = imovelBuscado.numero.toString();
+      this.numero = imovelBuscado.numero;
       this.cep = imovelBuscado.cep;
       this.tipo = imovelBuscado.tipo;
       this.valor = imovelBuscado.valor;

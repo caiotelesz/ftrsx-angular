@@ -4,7 +4,7 @@ export interface Imovel {
   estado: string;
   endereco: string;
   cep: string;
-  numero: number;
+  numero: string;
   tipo: string;
   valor: number;
   alugada: boolean;
