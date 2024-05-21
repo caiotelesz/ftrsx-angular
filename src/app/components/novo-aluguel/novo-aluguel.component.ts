@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AluguelService } from 'src/app/services/aluguel.service';
 import { ImovelService } from 'src/app/services/imovel.service';
 import { Imovel } from 'src/app/entities/imovel';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-novo-aluguel',
@@ -28,8 +29,11 @@ export class NovoAluguelComponent implements OnInit {
     private route: ActivatedRoute,
     private imovelService: ImovelService,
     private aluguelService: AluguelService,
-    private http: HttpClient
+    private http: HttpClient, private snackBar: MatSnackBar
   ) {}
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -39,14 +43,15 @@ export class NovoAluguelComponent implements OnInit {
   }
 
   buscarImovel(): void {
-    this.imovelService.findById(this.imovelId).subscribe(imovel => {
-      this.nome = imovel.nome;
-      this.estado = imovel.estado;
-      this.endereco = imovel.endereco;
-      this.numero = imovel.numero.toString();
-      this.cep = imovel.cep;
-      this.tipo = imovel.tipo;
-      this.valor = imovel.valor;
+    this.imovelService.findById(this.imovelId).subscribe(imovelBuscado => {
+      this.nome = imovelBuscado.nome;
+      this.estado = imovelBuscado.estado;
+      this.endereco = imovelBuscado.endereco;
+      this.numero = imovelBuscado.numero.toString();
+      this.cep = imovelBuscado.cep;
+      this.tipo = imovelBuscado.tipo;
+      this.valor = imovelBuscado.valor;
+      this.imovel = imovelBuscado;
     });
   }
 
@@ -67,9 +72,23 @@ export class NovoAluguelComponent implements OnInit {
       imovel: this.imovel
     };
 
+    this.imovelService.alugar(Number(this.imovel.id), this.imovel).subscribe(
+      () => {
+        console.log('Imóvel alugado com sucesso!');
+      },
+      error => {
+        console.error('Erro ao atualizar imóvel:', error);
+      }
+    );
+
     this.aluguelService.gravarAluguel(novoAluguel).subscribe(
       () => {
         console.log('Aluguel cadastrado com sucesso');
+        this.snackBar.open('Imóvel alugado com sucesso', 'Fechar', {
+          duration: 3000,
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition
+        });
       },
       error => {
         console.error('Erro ao cadastrar aluguel:', error);

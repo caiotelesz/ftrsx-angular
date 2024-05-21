@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Aluguel } from 'src/app/entities/aluguel';
 import { AluguelService } from 'src/app/services/aluguel.service';
 import { Imovel } from 'src/app/entities/imovel';
+import { ImovelService } from 'src/app/services/imovel.service';
 
 @Component({
   selector: 'app-linha-aluguel',
@@ -11,7 +12,7 @@ import { Imovel } from 'src/app/entities/imovel';
   styleUrls: ['./linha-aluguel.component.css']
 })
 export class LinhaAluguelComponent {
-  constructor(private authService: AuthService, private router: Router, private aluguelService: AluguelService) {}
+  constructor(private authService: AuthService, private router: Router, private aluguelService: AluguelService, private imovelService: ImovelService) {}
   @Input() aluguel!: Aluguel;
   @Input() imovel!: Imovel;
   @Output() aluguelDeletado = new EventEmitter<void>();
@@ -31,6 +32,7 @@ export class LinhaAluguelComponent {
   deletarAluguel(): void {
     this.aluguelService.deletarAluguel(Number(this.aluguel.id)).subscribe(() => {
       console.log('Aluguel deletado com sucesso');
+      this
       this.aluguelDeletado.emit();
     });
   }

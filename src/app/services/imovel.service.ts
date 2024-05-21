@@ -44,6 +44,14 @@ export class ImovelService {
     return this.http.put<Imovel>(`${this.baseUrl}/${id}`, imovel);
   }
 
+  alugar(id: number, imovel: Imovel): Observable<Imovel> {
+    return this.http.put<Imovel>(`${this.baseUrl}/alugar/${id}`, imovel);
+  }
+
+  disponibilizar(id: number, imovel: Imovel): Observable<Imovel> {
+    return this.http.put<Imovel>(`${this.baseUrl}/disponibilizar/${id}`, imovel);
+  }
+
   listarImoveisDisponiveis(): Observable<Imovel[]> {
     return this.http.get<Imovel[]>(`${this.baseUrl}/disponivel`);
   }

@@ -2,15 +2,45 @@
 <section class="content">
   <div class="titulo">
     <div></div>
-    <div><h1>Imóveis</h1></div>
+    <div>
+      <h1>Imóveis</h1>
+    </div>
     <div><button (click)="entrarCadastro()">Novo imóvel</button></div>
   </div>
+
+  <div class="filtros">
+    <div class="campos-filtros">
+      <div>
+        <label for="id">ID:</label>
+        <input type="number" id="id" [(ngModel)]="filtroId" placeholder="Id Imóvel">
+      </div>
+      <div>
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" [(ngModel)]="filtroTipo">
+          <option value="">Todos</option>
+          <option value="Casa">Casa</option>
+          <option value="Apartamento">Apartamento</option>
+          <option value="Studio">Studio</option>
+          <option value="Kitnet">Kitnet</option>
+        </select>
+
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" [(ngModel)]="filtroCep" mask="00000-000" placeholder="00000-000">
+
+      </div>
+      <div>
+
+      </div>
+    </div>
+    <div class="button-filtros">
+      <button (click)="aplicarFiltros()">Filtrar</button>
+      <button (click)="limparFiltros()">Limpar</button>
+    </div>
+  </div>
+
   <div class="tabela-itens">
-    <app-linha-imovel
-      *ngFor="let imovel of imoveis"
-      [imovel]="imovel"
-      (imovelDeletado)="carregarImoveis()"
-    ></app-linha-imovel>
+    <app-linha-imovel *ngFor="let imovel of imoveis" [imovel]="imovel"
+      (imovelDeletado)="carregarImoveis()"></app-linha-imovel>
   </div>
 </section>
 <app-footer></app-footer>

@@ -81,12 +81,15 @@ export class AlterarimovelComponent {
   }
 
   atualizarImovel(): void {
+
     const cep = (document.getElementById('cep') as HTMLInputElement).value;
     const estado = (document.getElementById('estado') as HTMLInputElement).value;
     const endereco = (document.getElementById('endereco') as HTMLInputElement).value;
     const numero = (document.getElementById('numero') as HTMLInputElement).value;
     const tipo = this.selectedTipo;
     const valor = (document.getElementById('valor') as HTMLInputElement).value;
+
+    if(cep && estado && endereco && numero && tipo && valor){
 
     const novoImovel = {
       nome: this.bairro,
@@ -96,7 +99,7 @@ export class AlterarimovelComponent {
       numero: Number(numero),
       tipo: tipo,
       valor: Number(valor),
-      alugada: false
+      alugada: this.imovel.alugada
     };
 
     this.imovelService.updateImovel(Number(this.imovel.id), novoImovel).subscribe(
@@ -112,5 +115,17 @@ export class AlterarimovelComponent {
         console.error('Erro ao atualizado imóvel:', error);
       }
     );
+    }
+    else {
+      this.showMessage('Por favor, preencha todos os campos');
+    }
+
+  }
+  showMessage(msg: string): void {
+    this.snackBar.open(`${msg}`, 'OK', {
+      horizontalPosition: 'left',
+      verticalPosition: 'top',
+      duration: 5000,
+    });
   }
 }

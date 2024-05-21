@@ -1,12 +1,24 @@
 <app-header></app-header>
-<div class="content">
+<section class="content">
   <div class="titulo">
     <div></div>
     <div><h1>Aluguéis</h1></div>
     <div></div>
   </div>
+
+  <div class="filtros">
+    <div class="campos-filtros">
+        <label for="id">ID:</label>
+        <input type="number" id="id" [(ngModel)]="filtroId" placeholder="Id Aluguel" min="0">
+    </div>
+    <div class="button-filtros">
+      <button (click)="aplicarFiltros()">Filtrar</button>
+      <button (click)="limparFiltros()">Limpar</button>
+    </div>
+  </div>
+
   <div class="tabela-itens">
     <app-linha-aluguel *ngFor="let aluguel of alugueis" [aluguel]="aluguel" (aluguelDeletado)="carregarAlugueis()"></app-linha-aluguel>
   </div>
-</div>
+</section>
 <app-footer></app-footer>

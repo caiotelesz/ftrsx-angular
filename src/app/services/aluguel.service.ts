@@ -16,6 +16,10 @@ export class AluguelService {
     return this.http.get<Aluguel>(`${this.baseUrl}/${id}`);
   }
 
+  findByCpf(cpf: string): Observable<Aluguel[]> {
+    return this.http.get<Aluguel[]>(`${this.baseUrl}/cpf/${cpf}`);
+  }
+
   listarTodosAlugueis(): Observable<Aluguel[]> {
     return this.http.get<Aluguel[]>(this.baseUrl);
   }
