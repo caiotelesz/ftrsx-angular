@@ -2,80 +2,76 @@ body {
   padding: 0;
   margin: 0;
 }
-.content{
+
+.content {
   display: flex;
   flex-direction: row;
-
 }
-.content>div{
+
+.content > div {
   width: 50%;
 }
-.fundoinicial{
+
+.fundoinicial {
   width: 100vw;
   background-image: url(../../../assets/imagens/inicial.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 30%;
 }
+
 .page-login {
   background-color: #131313;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  text-align: center;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.page-login > div {
-  margin: 0;
+.login-form {
   width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.page-login > div h1 {
+.login-form h1 {
   color: #3488ff;
-  font-size: 70px;
-  font-family: 'Font-padrao';
-  margin: 30px;
+  font-size: 2.5rem;
   font-weight: 800;
+  margin-bottom: 1.5rem;
 }
 
-.page-login > div input {
-  margin-top: 5px;
-  padding: 10px 12px;
+.login-form input{
+  margin-top: 0.5rem;
+  padding: 0.75rem;
   border: 2px solid #fff;
   border-radius: 20px;
   width: 100%;
-  max-width: 500px;
 }
 
-.page-login > div input:focus {
+.login-form input:focus {
   outline: none;
 }
 
-.page-login > div button {
+.login-form button {
   width: 100%;
-  max-width: 100px;
+  max-width: 200px;
   background-color: #3488ff;
-  border: 0px;
+  border: none;
   border-radius: 15px;
-  padding: 10px 15px;
-  font-size: 15px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
   color: #fff;
-  transition: color 0.3s ease;
-  font-weight: 100;
-  font-family: 'Font-padrao';
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-.page-login > div button:hover {
+.login-form button:hover {
   background-color: hsla(0, 0%, 91%, 0.8);
   cursor: pointer;
-  color: #000000;
+  color: #000;
   transition: 0.5s;
 }
-
-

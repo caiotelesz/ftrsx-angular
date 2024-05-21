@@ -1,86 +1,82 @@
-.content{
+.content {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  align-items: center;
   background-color: #ffffff;
-  align-items: center;
   min-height: 100vh;
-  color: #fff;
 }
-.titulo{
+
+.titulo {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  margin: 30px 30px;
-  width: 100%;
+  width: 90%;
+  margin: 30px;
 }
-.titulo>div{
-  width: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.componentes{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-h1{
-  margin: 0;
+
+h1 {
   color: #131313;
   font-weight: bold;
-  font-family: 'Font-padrao';
 }
-.tabela-itens{
+
+.tabela-itens {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 90%;
-  padding: 50px;
+  padding: 30px;
   margin-bottom: 30px;
   border-radius: 20px;
   background-color: #616161;
 }
-button{
-  width: 100%;
-  max-width: 200px;
+
+.tabela-itens div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f3f3;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button {
   background-color: #131313;
-  border: 0px;
+  border: none;
   border-radius: 5px;
-  padding: 5px 15px;
+  padding: 10px 20px;
   color: #fff;
-  margin-top: 20px;
+  margin-top: 10px;
   font-weight: 100;
-  font-family: 'Font-padrao';
-}
-button:hover{
   cursor: pointer;
-  background-color: #525252;
-  transition: 0.5s;
+  transition: background-color 0.3s ease;
 }
-.filtros{
-  width: 100%;
+
+button:hover {
+  background-color: #525252;
+}
+
+.filtros {
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   margin-bottom: 30px;
 }
-.filtros>div{
-  width: 80%;
+
+.campos-filtros {
+  width: 100%;
   display: flex;
   gap: 20px;
 }
-.campos-filtros{
-  display: flex;
-  justify-content: space-between;
+
+.campos-filtros input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
 }
-.campos-filtros>div{
-  width: 30%;
-}
-.button-filtros{
+
+.button-filtros {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
 }

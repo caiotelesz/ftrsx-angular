@@ -1,38 +1,36 @@
-.content{
+.content {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  background-color: #ffffff;
   align-items: center;
+  justify-content: flex-start;
   min-height: 100vh;
+  background-color: #ffffff;
   color: #fff;
 }
-.titulo{
+
+.titulo {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  margin: 30px 30px;
+  align-items: center;
   width: 100%;
+  margin: 30px;
 }
-.titulo>div{
-  width: 30%;
+
+.titulo > div {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-.componentes{
-  display: flex;
-  flex-direction: row;
   align-items: center;
+  width: 30%;
 }
-h1{
+
+h1 {
   margin: 0;
   color: #131313;
   font-weight: bold;
   font-family: 'Font-padrao';
 }
-.tabela-itens{
+
+.tabela-itens {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -42,20 +40,51 @@ h1{
   border-radius: 20px;
   background-color: #616161;
 }
-button{
-  width: 100%;
+
+button {
   max-width: 200px;
-  background-color: #131313;
-  border: 0px;
-  border-radius: 5px;
   padding: 5px 15px;
-  color: #fff;
   margin-top: 20px;
+  background-color: #131313;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
   font-weight: 100;
   font-family: 'Font-padrao';
+  transition: background-color 0.5s, color 0.5s;
 }
-button:hover{
+
+button:hover {
   cursor: pointer;
   background-color: #525252;
-  transition: 0.5s;
+}
+
+.filtros {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.filtros > div {
+  width: 80%;
+  display: flex;
+  gap: 20px;
+}
+
+.campos-filtros {
+  display: flex;
+  justify-content: space-between;
+}
+
+.campos-filtros > div {
+  width: 30%;
+}
+
+.button-filtros {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

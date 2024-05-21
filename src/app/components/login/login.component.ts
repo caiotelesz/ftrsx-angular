@@ -20,31 +20,30 @@ export class LoginComponent {
     private auth: AuthService
   ) {}
 
-  login() {
-    if (this.username && this.password) {
-      this.loginService.buscarLogin(this.username, this.password).subscribe(
-        (isValid: boolean) => {
-          if (isValid) {
-            this.auth.login(true);
-            this.router.navigate(['/home']);
-          } else {
-            this.showMessage('Usuário ou senha inválidos');
-          }
-        },
-        (error) => {
-          this.showMessage('Erro ao tentar fazer login');
-        }
-      );
-    } else {
+  login(): void {
+    if (!this.username || !this.password) {
       this.showMessage('Por favor, preencha todos os campos');
+      return;
     }
+
+    this.loginService.buscarLogin(this.username, this.password).subscribe(
+      (isValid: boolean) => {
+        if (isValid) {
+          this.auth.login(true);
+          this.router.navigate(['/home']);
+        } else {
+          this.showMessage('Usuário ou senha inválidos');
+        }
+      },
+      () => this.showMessage('Erro ao tentar fazer login')
+    );
   }
 
-  showMessage(msg: string): void {
-    this.snack.open(`${msg}`, 'OK', {
+  private showMessage(msg: string): void {
+    this.snack.open(msg, 'OK', {
       horizontalPosition: 'left',
       verticalPosition: 'top',
-      duration: 5000,
+      duration: 5000
     });
   }
 }
