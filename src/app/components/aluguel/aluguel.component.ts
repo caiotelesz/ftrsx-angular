@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Aluguel } from 'src/app/entities/aluguel';
 import { AluguelService } from 'src/app/services/aluguel.service';
+import { CpfService } from 'src/app/services/cpf.service';
 
 @Component({
   selector: 'app-aluguel',
@@ -12,7 +13,7 @@ export class AluguelComponent implements OnInit {
   filtroId: number | null = null;
   filtroCpf: string = '';
 
-  constructor(private aluguelService: AluguelService) {}
+  constructor(private aluguelService: AluguelService, private cpfService: CpfService) {}
 
   ngOnInit(): void {
     this.carregarAlugueis();
@@ -58,4 +59,5 @@ export class AluguelComponent implements OnInit {
     this.filtroCpf = '';
     this.carregarAlugueis();
   }
+
 }
