@@ -39,7 +39,8 @@ import { AlterarimovelComponent } from './components/alterarimovel/alterarimovel
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { NovoAluguelComponent } from './components/novo-aluguel/novo-aluguel.component';
 import { AlteraraluguelComponent } from './components/alteraraluguel/alteraraluguel.component';
-import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component'
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component'
 
 registerLocaleData(localePt);
 const maskConfig: Partial<IConfig> = {
@@ -66,6 +67,7 @@ const maskConfig: Partial<IConfig> = {
     NovoAluguelComponent,
     AlteraraluguelComponent,
     ConfirmDialogComponent,
+    CadastroComponent,
   ],
   imports: [
     ScrollingModule,

@@ -14,11 +14,17 @@ import { TermosComponent } from './components/termos/termos.component';
 import { AlterarimovelComponent } from './components/alterarimovel/alterarimovel.component';
 import { NovoAluguelComponent } from './components/novo-aluguel/novo-aluguel.component';
 import { AlteraraluguelComponent } from './components/alteraraluguel/alteraraluguel.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LoginComponent
+  },
+  {
+    path: 'cadastro',
+    component: CadastroComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'home',
