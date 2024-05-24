@@ -6,24 +6,6 @@
     <div><button (click)="entrarCadastro()">Novo imóvel</button></div>
   </div>
 
-  <div class="filtros">
-    <div class="campos-filtros">
-      <div>
-        <input type="text" [(ngModel)]="filtroTipo" placeholder="Tipo" />
-      </div>
-      <div>
-        <input type="text" [(ngModel)]="filtroCep" placeholder="CEP" />
-      </div>
-      <div>
-        <input type="number" [(ngModel)]="filtroId" placeholder="ID" />
-      </div>
-    </div>
-    <div class="button-filtros">
-      <button (click)="aplicarFiltros()">Aplicar Filtros</button>
-      <button (click)="limparFiltros()">Limpar Filtros</button>
-    </div>
-  </div>
-
   <div class="tabela-itens" *ngIf="imoveisDisponiveis.length > 0; else noImoveis">
     <app-linha-imovel
       *ngFor="let imovel of imoveisDisponiveis"

@@ -6,7 +6,7 @@
       <input type="text" id="nomeCliente" name="nomeCliente"><br><br>
 
       <label for="cpf">CPF:</label>
-      <input type="text" id="cpf" name="cpf" mask="000.000.000-00"><br><br>
+      <input type="text" id="cpf" name="cpf"><br><br>
 
       <label for="tipoPagamento">Forma de Pagamento</label>
       <input list="tipoPagamento" [(ngModel)]="selectedTipo" (input)="handleInput($event)">

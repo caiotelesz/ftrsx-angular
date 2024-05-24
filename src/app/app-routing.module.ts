@@ -15,6 +15,7 @@ import { AlterarimovelComponent } from './components/alterarimovel/alterarimovel
 import { NovoAluguelComponent } from './components/novo-aluguel/novo-aluguel.component';
 import { AlteraraluguelComponent } from './components/alteraraluguel/alteraraluguel.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { ImovelidComponent } from './components/imovelid/imovelid.component';
 
 const routes: Routes = [
   {
@@ -23,8 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'cadastro',
-    component: CadastroComponent,
-    canActivate: [AuthGuard]
+    component: CadastroComponent
   },
   {
     path: 'home',
@@ -79,6 +79,11 @@ const routes: Routes = [
   {
     path: 'termosecondicoes',
     component: TermosComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'verimovel:id',
+    component: ImovelidComponent,
     canActivate: [AuthGuard]
   }
 ];

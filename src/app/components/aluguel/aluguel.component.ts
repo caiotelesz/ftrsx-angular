@@ -13,7 +13,7 @@ export class AluguelComponent implements OnInit {
   filtroId: number | null = null;
   filtroCpf: string = '';
 
-  constructor(private aluguelService: AluguelService, private cpfService: CpfService) {}
+  constructor(private aluguelService: AluguelService) {}
 
   ngOnInit(): void {
     this.carregarAlugueis();

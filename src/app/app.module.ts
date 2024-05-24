@@ -21,7 +21,6 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { MatSelectModule } from "@angular/material/select";
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { LoginComponent } from './components/login/login.component';
-import { VitrineComponent } from './vitrine/vitrine.component';
 import { HomeComponent } from './components/home/home.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { DisponiveisComponent } from './components/disponiveis/disponiveis.component';
@@ -41,6 +40,7 @@ import { NovoAluguelComponent } from './components/novo-aluguel/novo-aluguel.com
 import { AlteraraluguelComponent } from './components/alteraraluguel/alteraraluguel.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component'
+import { ImovelidComponent } from './components/imovelid/imovelid.component';
 
 registerLocaleData(localePt);
 const maskConfig: Partial<IConfig> = {
@@ -52,7 +52,6 @@ const maskConfig: Partial<IConfig> = {
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    VitrineComponent,
     HomeComponent,
     SobreComponent,
     DisponiveisComponent,
@@ -68,6 +67,7 @@ const maskConfig: Partial<IConfig> = {
     AlteraraluguelComponent,
     ConfirmDialogComponent,
     CadastroComponent,
+    ImovelidComponent
   ],
   imports: [
     ScrollingModule,

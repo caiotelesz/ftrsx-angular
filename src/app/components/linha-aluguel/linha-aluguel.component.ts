@@ -31,6 +31,12 @@ export class LinhaAluguelComponent {
       this.router.navigate(['/alugar/', Number(this.aluguel.imovel.id)]);
     }
   }
+  verImovel(){
+    if(this.authService.isAuthenticatedUser())
+      {
+      this.router.navigate(['/verimovel/', Number(this.aluguel.imovel.id)]);
+    }
+  }
   deletarAluguel(): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {

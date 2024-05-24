@@ -10,6 +10,8 @@
     <div class="campos-filtros">
         <label for="id">ID:</label>
         <input type="number" id="id" [(ngModel)]="filtroId" placeholder="Id Aluguel" min="0">
+        <label for="cpf">cpf:</label>
+        <input type="text" id="id" [(ngModel)]="filtroCpf" placeholder="000.000.000-00" mask="000.000.000-00">
     </div>
     <div class="button-filtros">
       <button (click)="aplicarFiltros()">Filtrar</button>

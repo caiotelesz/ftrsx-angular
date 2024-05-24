@@ -5,7 +5,6 @@
   background-color: #ffffff;
   min-height: 100vh;
 }
-
 .titulo {
   display: flex;
   justify-content: space-between;
@@ -27,7 +26,6 @@ h1 {
   font-weight: bold;
   font-family: 'Font-padrao';
 }
-
 .tabela-itens {
   display: flex;
   flex-direction: column;

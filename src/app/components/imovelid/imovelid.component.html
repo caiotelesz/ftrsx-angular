@@ -1,0 +1,15 @@
+<app-header></app-header>
+<section class="content">
+  <div class="titulo">
+    <div></div>
+    <div>
+      <h1>Imóvel: {{imovelId}}</h1>
+    </div>
+    <div><button (click)="entrarCadastro()">Novo imóvel</button></div>
+  </div>
+  <div class="tabela-itens">
+    <app-linha-imovel *ngIf="imovelCarregado" [imovel]="imovelCarregado"
+      (imovelDeletado)="carregarImovel(imovelId)"></app-linha-imovel>
+  </div>
+</section>
+<app-footer></app-footer>
