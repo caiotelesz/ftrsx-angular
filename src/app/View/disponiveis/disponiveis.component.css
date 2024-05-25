@@ -1,0 +1,88 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #fff;
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 30px;
+}
+
+.titulo>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+h1 {
+  margin: 0;
+  color: #131313;
+  font-weight: bold;
+  font-family: 'Font-padrao';
+}
+
+.tabela-itens {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  padding: 50px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  background-color: #616161;
+}
+
+button {
+  background-color: #131313;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  margin-top: 10px;
+  font-weight: 100;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #525252;
+}
+
+.filtros {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.filtros>div {
+  width: 80%;
+  display: flex;
+  gap: 20px;
+}
+
+.campos-filtros {
+  display: flex;
+  justify-content: space-between;
+}
+
+.campos-filtros>div {
+  width: 30%;
+}
+
+.button-filtros {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

@@ -1,21 +1,21 @@
 // app.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-import { AuthGuard } from './services/auth-guard.guard';
-import { AlugadasComponent } from './components/alugadas/alugadas.component';
-import { DisponiveisComponent } from './components/disponiveis/disponiveis.component';
-import { AluguelComponent } from './components/aluguel/aluguel.component';
-import { SobreComponent } from './components/sobre/sobre.component';
-import { NovoImovelComponent } from './components/novo-imovel/novo-imovel.component';
-import { PoliticaComponent } from './components/politica/politica.component';
-import { TermosComponent } from './components/termos/termos.component';
-import { AlterarimovelComponent } from './components/alterarimovel/alterarimovel.component';
-import { NovoAluguelComponent } from './components/novo-aluguel/novo-aluguel.component';
-import { AlteraraluguelComponent } from './components/alteraraluguel/alteraraluguel.component';
-import { CadastroComponent } from './components/cadastro/cadastro.component';
-import { ImovelidComponent } from './components/imovelid/imovelid.component';
+import { LoginComponent } from './View/login/login.component';
+import { HomeComponent } from './View/home/home.component';
+import { AuthGuard } from './Model/services/auth-guard.guard';
+import { AlugadasComponent } from './View/alugadas/alugadas.component';
+import { DisponiveisComponent } from './View/disponiveis/disponiveis.component';
+import { AluguelComponent } from './View/aluguel/aluguel.component';
+import { SobreComponent } from './View/sobre/sobre.component';
+import { NovoImovelComponent } from './View/novo-imovel/novo-imovel.component';
+import { PoliticaComponent } from './View/politica/politica.component';
+import { TermosComponent } from './View/termos/termos.component';
+import { AlterarimovelComponent } from './View/alterarimovel/alterarimovel.component';
+import { NovoAluguelComponent } from './View/novo-aluguel/novo-aluguel.component';
+import { AlteraraluguelComponent } from './View/alteraraluguel/alteraraluguel.component';
+import { CadastroComponent } from './View/cadastro/cadastro.component';
+import { ImovelidComponent } from './View/imovelid/imovelid.component';
 
 const routes: Routes = [
   {
@@ -82,7 +82,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'verimovel:id',
+    path: 'verimovel/:id',
     component: ImovelidComponent,
     canActivate: [AuthGuard]
   }
