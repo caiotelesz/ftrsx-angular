@@ -76,18 +76,17 @@ export class NovoAluguelComponent implements OnInit {
 
     this.aluguelController.gravarAluguel(novoAluguel).subscribe(
       () => {
+        this.router.navigate(['/home']);
         console.log('Aluguel cadastrado com sucesso');
         this.snackBar.open('Imóvel alugado com sucesso', 'Fechar', {
           duration: 3000,
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition
         });
-
       },
       error => {
         console.error('Erro ao cadastrar aluguel:', error);
       }
     );
-    this.router.navigate(['/home']);
   }
 }
