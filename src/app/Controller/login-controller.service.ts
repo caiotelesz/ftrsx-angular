@@ -13,6 +13,8 @@ export class LoginController {
     private snackBar: MatSnackBar
   ) {}
 
+  loginBuscado!: Observable<Boolean>;
+
   findById(id: number): Observable<Login> {
     return this.loginService.findById(id);
   }
@@ -26,6 +28,10 @@ export class LoginController {
   }
 
   gravarLogin(login: Login): Observable<boolean> {
+    this.loginBuscado = this.login(login.user, login.senha);
+    if(this.loginBuscado){
+      return throwError(() => new Error('Login já cadastrado!'));
+    }
     if (!this.validarLogin(login)) {
       this.snackBar.open('Dados de login inválidos', 'Fechar', {
         duration: 3000,

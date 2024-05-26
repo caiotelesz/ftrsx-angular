@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AluguelController } from 'src/app/Controller/aluguel-controller.service';
 import { ImovelController } from 'src/app/Controller/imovel-controller.service';
 import { Imovel } from 'src/app/Model/entities/imovel';
@@ -30,7 +30,8 @@ export class NovoAluguelComponent implements OnInit {
     private imovelController: ImovelController,
     private aluguelController: AluguelController,
     private http: HttpClient,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
@@ -38,7 +39,7 @@ export class NovoAluguelComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.imovelId = +params['id']; // '+' converte string para número
+      this.imovelId = +params['id'];
       this.buscarImovel();
     });
   }
@@ -81,10 +82,12 @@ export class NovoAluguelComponent implements OnInit {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition
         });
+
       },
       error => {
         console.error('Erro ao cadastrar aluguel:', error);
       }
     );
+    this.router.navigate(['/home']);
   }
 }
