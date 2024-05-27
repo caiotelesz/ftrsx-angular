@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError, of, catchError } from 'rxjs';
+import { Observable, throwError, of, catchError, map, switchMap  } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LoginService } from '../Model/services/login.service';
 import { Login } from '../Model/entities/login';
+
 
 @Injectable({
   providedIn: 'root',
@@ -23,30 +24,48 @@ export class LoginController {
     return this.loginService.findAll();
   }
 
-  login(user: string, senha: string): Observable<boolean> {
-    return this.loginService.buscarLogin(user, senha);
-  }
-
   gravarLogin(login: Login): Observable<boolean> {
-    this.loginBuscado = this.login(login.user, login.senha);
-    if(this.loginBuscado){
-      return throwError(() => new Error('Login já cadastrado!'));
-    }
-    if (!this.validarLogin(login)) {
-      this.snackBar.open('Dados de login inválidos', 'Fechar', {
-        duration: 3000,
-      });
-      return throwError(() => new Error('Dados de login inválidos'));
-    }
-    return this.loginService.gravarLogin(login).pipe(
-      catchError((error) => {
-        console.error('Erro ao gravar login:', error);
-        this.snackBar.open('Erro ao gravar login', 'Fechar', {
-          duration: 3000,
-        });
-        return of(false);
+    return this.login(login.user, login.senha).pipe(
+      switchMap((loginExiste) => {
+        if (loginExiste) {
+          this.snackBar.open('Login já cadastrado!', 'Fechar', {
+            duration: 3000,
+          });
+          return throwError(() => new Error('Login já cadastrado!'));
+        }
+        if (!this.validarLogin(login)) {
+          this.snackBar.open('Dados de login inválidos', 'Fechar', {
+            duration: 3000,
+          });
+          return throwError(() => new Error('Dados de login inválidos'));
+        }
+        return this.loginService.gravarLogin(login).pipe(
+          map(() => true),
+          catchError((error) => {
+            console.error('Erro ao gravar login:', error);
+            this.snackBar.open('Erro ao gravar login', 'Fechar', {
+              duration: 3000,
+            });
+            return of(false);
+          })
+        );
       })
     );
+  }
+
+  login(user: string, senha: string): Observable<boolean> {
+    return this.loginService.buscarLogin(user, senha).pipe(
+      map((result) => !!result) // converte o resultado para um booleano
+    );
+  }
+
+  validarLogin(login: Login): boolean {
+    if (!login.user || !login.senha) {
+      return false;
+    }
+    const userRegex = /^[a-zA-Z0-9._-]{3,}$/;
+    const senhaRegex = /^[a-zA-Z0-9._-]{6,}$/;
+    return userRegex.test(login.user) && senhaRegex.test(login.senha);
   }
 
   deletar(id: number): Observable<void> {
@@ -61,12 +80,5 @@ export class LoginController {
       return throwError(() => new Error('Dados de login inválidos'));
     }
     return this.loginService.update(login);
-  }
-
-  private validarLogin(login: Login): boolean {
-    if (!login.user || !login.senha) {
-      return false;
-    }
-    return true;
   }
 }
