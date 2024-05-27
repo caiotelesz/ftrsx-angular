@@ -64,7 +64,7 @@ export class LoginController {
       return false;
     }
     const userRegex = /^[a-zA-Z0-9._-]{3,}$/;
-    const senhaRegex = /^[a-zA-Z0-9._-]{6,}$/;
+    const senhaRegex = /^[a-zA-Z0-9._-]{4,}$/;
     return userRegex.test(login.user) && senhaRegex.test(login.senha);
   }
 
