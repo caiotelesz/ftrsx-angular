@@ -66,6 +66,10 @@ export class ImovelController {
   }
 
   updateImovel(id: number, imovel: Imovel): Observable<Imovel> {
+    if (!this.validarImovel(imovel)) {
+      this.exibirMensagemErro('Dados do imóvel inválidos');
+      return throwError(() => new Error('Dados do imóvel inválidos'));
+    }
     return this.imovelService.updateImovel(id, imovel).pipe(
       catchError(() => {
         this.exibirMensagemErro('Erro ao atualizar o imóvel');

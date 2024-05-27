@@ -29,6 +29,10 @@ export class AluguelController {
   }
 
   gravarAluguel(aluguel: Aluguel): Observable<Aluguel> {
+    if (aluguel.imovel.alugada) {
+      this.exibirMensagemErro('Imóvel já está alugado');
+      return throwError(() => new Error(''));
+    }
     const cpfSemPontuacao = this.removerPontuacaoCPF(aluguel.cpf);
     if (!this.cpfService.validarCPF(cpfSemPontuacao)) {
       this.exibirMensagemErro('CPF inválido');
