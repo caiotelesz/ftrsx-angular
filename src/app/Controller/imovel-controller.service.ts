@@ -107,9 +107,19 @@ export class ImovelController {
     if (!imovel.endereco || !imovel.cep || !imovel.tipo) {
       return false;
     }
-    if (imovel.valor <= 0 || imovel.valor >10000) {
+    if (!this.validarCep(imovel.cep)) {
+      return false;
+    }
+    const valorRegex = /^\d+(\.\d{1,2})?$/;
+    if (!valorRegex.test(imovel.valor.toString()) || imovel.valor <= 0 || imovel.valor > 100000) {
       return false;
     }
     return true;
   }
+
+  private validarCep(cep: string): boolean {
+    const cepRegex = /^\d{5}-?\d{3}$/;
+    return cepRegex.test(cep);
+  }
+
 }

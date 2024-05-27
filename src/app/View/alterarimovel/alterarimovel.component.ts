@@ -16,7 +16,6 @@ export class AlterarimovelComponent implements OnInit {
   bairro: string = '';
   imovel!: Imovel;
   id!: number;
-  mask: string = 'separator.2';
 
   constructor(
     private http: HttpClient,

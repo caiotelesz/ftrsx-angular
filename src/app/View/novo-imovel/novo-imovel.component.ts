@@ -11,7 +11,6 @@ import { ImovelController } from 'src/app/Controller/imovel-controller.service';
 export class NovoImovelComponent {
   tipos: string[] = ['Casa', 'Apartamento', 'Kitnet'];
   selectedTipo = "";
-  mask: string = 'separator.2';
   bairro: string = '';
 
   constructor(
